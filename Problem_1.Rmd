@@ -1,0 +1,7 @@
+---
+title: "Problem 1"
+author: "Manali Phadke"
+date: "October 24, 2017"
+output: html_document
+---
+
