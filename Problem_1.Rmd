@@ -5,4 +5,16 @@ date: "October 24, 2017"
 output: html_document
 ---
 
-Problem 1
+#load and tidy the pups dataset
+```{r}
+library(readr)
+library(tidyverse)
+library(janitor)
+pups_data = read_csv("./data/FAS_pups.csv") %>%
+  clean_names() %>%
+  gather(key = pd_outcome, value = pd, pd_ears:pd_walk) %>%
+  separate(pd_outcome, into = c("remove", "pd_outcome"), sep = "_") %>%
+  select(-remove) %>%
+  mutate(sex = recode(sex, `1` = "male", `2` = "female")) 
+
+```
