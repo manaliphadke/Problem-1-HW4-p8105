@@ -18,3 +18,10 @@ pups_data = read_csv("./data/FAS_pups.csv") %>%
   mutate(sex = recode(sex, `1` = "male", `2` = "female")) 
 
 ```
+
+# Making a plot of the distribution of post-natal days for each landmark
+```{r pd_landmark_distr}
+pups_data %>%
+  ggplot(aes(x = pd_outcome, y = pd)) + geom_boxplot()
+```
+
